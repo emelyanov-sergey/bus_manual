@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+  Редактировать запись
+{% endblock %}
+{% block content %}
+<h1>Редактировать запись</h1>
+<br/>
+<div class="form-group">
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p }}
+    <button class="btn btn-primary">Изменить</button>
+</div>
+{% endblock %}
