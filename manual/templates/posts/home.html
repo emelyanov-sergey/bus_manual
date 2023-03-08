@@ -1,15 +1,21 @@
-{% extends 'base.html' %}
-{% block content %}
-  <head>
-  </head>
-  <body>
-    <h1>Post</h1>
+{% extends 'base.html' %} {% block content %}
+<head> </head>
+<body>
+  <h1>Post</h1>
+  <div class="container py-5">
     <ul>
-    {% for post in object_list %}
-      <li><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a> - {{ post.author }}<br/>
-      {{ post.body|safe }}</li>
-      <br/>
-    {%  endfor %}
+      {% for post in object_list %}
+      <li>
+        <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a><br />
+        {{ post.body|safe }}
+      </li>
+      <a> Категория: {{ post.category }}</a><br/>
+        {% if post.group %}   
+          <a href="{% url 'group_list' post.group.slug %}">все записи группы {{ post.group.slug }}</a>
+        {% endif %}
+      <hr>
+      {% endfor %}
     </ul>
-  </body>
+  </div>
+</body>
 {% endblock %}

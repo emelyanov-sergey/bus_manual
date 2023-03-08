@@ -8,9 +8,13 @@ choices = Category.objects.all().values_list('name', 'name')
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'category', 'author', 'body')
+        fields = ('title', 'group', 'category', 'author', 'body')
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'group': forms.Select(
+                choices=choices,
+                attrs={'class': 'form-control'}
+            ),
             'author': forms.Select(attrs={'class': 'form-control'}),
             'category': forms.Select(
                 choices=choices,

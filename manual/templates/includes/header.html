@@ -1,33 +1,39 @@
 {% load static %}
 <header>
-    <nav class="navbar navbar-light" style="background-color: lightskyblue">
-      <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">
-          <img src=" {% static 'img/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-          <span><b>Manual</b></span>
-        </a>        
-        <ul class="nav  nav-pills">
-          <li class="nav-item">              
-            <a class="nav-link" href="../about/author.html">
-              <b>Лиаз 2020 с МНТ</b>
-            </a>
-          </li>
-          <li class="nav-item">              
-            <a class="nav-link" href="../about/author.html">
-              <b>Volgabus 2019</b>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../about/tech.html">
-              <b>Volgabus 2022</b>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'create_post' %}">
-              <b>Новая запись</b>
-            </a>
-          </li>        
-        </ul>      
-      </div>
-    </nav> 
-  </header>
+  <nav class="navbar navbar-light" style="background-color: lightskyblue">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img
+          src=" {% static 'img/logo.png' %}"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+        />
+        <span><b>Manual</b></span>
+      </a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="/group/liaz20/">
+            <b>Лиаз 2020-22 с МНТ</b>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/group/volga19/">
+            <b>Volgabus 2019</b>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/group/volga22/">
+            <b>Volgabus 2022</b>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'create_post' %}">
+            <b>Новая запись</b>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
